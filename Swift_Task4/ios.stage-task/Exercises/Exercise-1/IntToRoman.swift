@@ -4,12 +4,12 @@ public extension Int {
     
     var roman: String? {
         
-        var integerValue = self
+        var inputValue = self
         
-        if integerValue <= 0 || integerValue >= 3999 {
+        if self <= 0 && self <= 3999 {
             return nil
         } else {
-                var numeralString = ""
+                var romanInt = ""
                 let mappingList: [(Int, String)] = [(1000, "M"),
                                                     (900, "CM"),
                                                     (500, "D"),
@@ -24,12 +24,12 @@ public extension Int {
                                                     (4, "IV"),
                                                     (1, "I")]
                 for i in mappingList {
-                    while (integerValue >= i.0) {
-                        integerValue -= i.0
-                        numeralString += i.1
+                    while (inputValue >= i.0) {
+                        inputValue -= i.0
+                        romanInt += i.1
                     }
                 }
-                return numeralString
+                return romanInt
         }
 
     }
