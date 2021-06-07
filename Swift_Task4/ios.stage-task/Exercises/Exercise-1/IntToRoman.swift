@@ -6,7 +6,7 @@ public extension Int {
         
         var integerValue = self
         
-        if integerValue <= 0 {
+        if integerValue <= 0 || integerValue >= 3999 {
             return nil
         } else {
                 var numeralString = ""
